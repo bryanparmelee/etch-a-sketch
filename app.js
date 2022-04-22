@@ -2,7 +2,7 @@ const grid = document.querySelector('.grid-container');
 const btn = document.querySelector('.btn');
 const slider = document.querySelector('#range');
 const sValue = document.querySelector('#s-value');
-let num = 16;
+let num = slider.getAttribute('value');
 
 const gridMaker = (num) => {
     grid.setAttribute('style', `grid: repeat(${num}, 1fr) / repeat(${num}, 1fr);`)
