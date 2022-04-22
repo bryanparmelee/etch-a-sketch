@@ -19,6 +19,6 @@
     background-color: aquamarine;
 }
 
-.cell:hover {
+.hover {
     background-color: gold;
 }
