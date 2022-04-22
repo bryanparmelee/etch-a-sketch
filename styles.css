@@ -4,13 +4,23 @@
     box-sizing: border-box;
 }
 
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn {
+    margin: 5vh; 
+}
 .grid-container {
     /* resize: both; */
     width: 600px;
     height: 600px;
     background-color: blueviolet;
     display: grid;
-    grid: repeat(auto-fit, minmax(50px, 1fr)) / repeat(auto-fit, minmax(50px, 1fr));
   
 }
 

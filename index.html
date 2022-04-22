@@ -10,6 +10,26 @@
 <body>
 <div class="main-container">
     <button onclick="erase()" type="button" class="btn">CLEAR</button>
+    <div class="slider-container">
+        <input type="range" min="1" max="100" value="50" class="slider" id="range" list="tickmarks" />
+        <datalist id="tickmarks">
+            <option value="1"></option>
+            <option value="10"></option>
+            <option value="20"></option>
+            <option value="30"></option>
+            <option value="40"></option>
+            <option value="50"></option>
+            <option value="60"></option>
+            <option value="70"></option>
+            <option value="80"></option>
+            <option value="90"></option>
+            <option value="100"></option>
+
+        </datalist>
+    </div>
+    <div class="slide-value">
+        <p id="s-value"></p>
+    </div>
     <div class="grid-container"></div>
 </div>
     <script src="./app.js"></script>
