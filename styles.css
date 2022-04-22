@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.grid-container {
+    /* resize: both; */
+    width: 600px;
+    height: 600px;
+    background-color: blueviolet;
+    display: grid;
+    grid: repeat(auto-fit, minmax(50px, 1fr)) / repeat(auto-fit, minmax(50px, 1fr));
+  
+}
+
+.cell {
+    border: 1px solid white;
+    background-color: aquamarine;
+}
+
+.cell:hover {
+    background-color: gold;
+}
