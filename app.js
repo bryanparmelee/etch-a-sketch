@@ -1,5 +1,6 @@
 const grid = document.querySelector('.grid-container');
 const btn = document.querySelector('.btn');
+const num = 30;
 
 const gridMaker = (num) => {
     grid.setAttribute('style', `grid: repeat(${num}, 1fr) / repeat(${num}, 1fr);`)
@@ -8,12 +9,23 @@ const gridMaker = (num) => {
         cell.classList.add('cell');
         grid.appendChild(cell);
     }
+    let cells = document.querySelectorAll('.cell');
+    cells.forEach((cell) => {
+        cell.addEventListener('mouseover', () => {
+            cell.classList.add('hover');
+        })
+    })
 }
 
+const erase = () => {
+        let cells = document.querySelectorAll('.cell');
+        cells.forEach((cell) => {
+            grid.removeChild(cell);
+        })
+        gridMaker(num);
+    }
 
-
-gridMaker(60);
-// btn.addEventListener('click', clear());
+gridMaker(num);
 
 
 
