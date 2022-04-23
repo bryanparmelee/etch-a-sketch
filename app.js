@@ -2,7 +2,7 @@ const grid = document.querySelector('.grid-container');
 const btn = document.querySelector('.btn');
 const slider = document.querySelector('#range');
 const sValue = document.querySelector('#s-value');
-let num = slider.getAttribute('value');
+// let num = slider.getAttribute('value');
 
 const gridMaker = (num) => {
     grid.setAttribute('style', `grid: repeat(${num}, 1fr) / repeat(${num}, 1fr);`)
@@ -24,17 +24,16 @@ const erase = () => {
         cells.forEach((cell) => {
             grid.removeChild(cell);
         })
-        gridMaker(num);
+        gridMaker(slider.value);
+       
     }
 
 slider.addEventListener('change', (e) => {
     erase();
-    num = e.target.value;
-    gridMaker(num);
 })
 
 
-gridMaker(num);
+gridMaker(slider.value);
 
 
 
