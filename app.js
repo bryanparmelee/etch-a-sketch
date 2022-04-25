@@ -2,9 +2,19 @@ const grid = document.querySelector('.grid-container');
 const btn = document.querySelector('.btn');
 const slider = document.querySelector('#range');
 const sValue = document.querySelector('#s-value');
-// let num = slider.getAttribute('value');
+const clear = document.querySelector('#clear');
+const black = document.querySelector('#black');
+const rainbow = document.querySelector('#rainbow')
 
-const gridMaker = (num) => {
+const random = () => {
+    let r = Math.floor(Math.random() * 255);
+    let g = Math.floor(Math.random() * 255);
+    let b = Math.floor(Math.random() * 255);
+    return "rgb(" + r + ", " + g + ", " + b + ");";
+ }
+
+const gridMaker = (mode) => {
+    let num = slider.value;
     grid.setAttribute('style', `grid: repeat(${num}, 1fr) / repeat(${num}, 1fr);`)
     for (let i = 0; i < num * num; i++) {
         const cell = document.createElement('div');
@@ -14,36 +24,44 @@ const gridMaker = (num) => {
     let cells = document.querySelectorAll('.cell');
     cells.forEach((cell) => {
         cell.addEventListener('mouseover', () => {
-            cell.classList.add('hover');
+            cell.style.backgroundColor = mode;
         })
     })
-}
+   
+  }
 
 const erase = () => {
         let cells = document.querySelectorAll('.cell');
         cells.forEach((cell) => {
-            grid.removeChild(cell);
-        })
-        gridMaker(slider.value);
-       
+           grid.removeChild(cell);
+        })       
     }
 
 slider.addEventListener('change', (e) => {
     erase();
+    gridMaker('black');
 })
 
-const random = () => {
-   let r = Math.floor(Math.random() * 255);
-   let g = Math.floor(Math.random() * 255);
-   let b = Math.floor(Math.random() * 255);
-   return "rgb(" + r + ", " + g + ", " + b + ");";
-}
+clear.addEventListener('click', () => {
+    erase();
+    gridMaker('black');
+})
 
-console.log(random());
+black.addEventListener('click', () => {
+    erase();
+    gridMaker('black');
+})
+
+rainbow.addEventListener('click', () => {
+    erase();
+    gridMaker(random());
+})
 
 
 
-gridMaker(slider.value);
+
+
+gridMaker('black');
 
 
 
