@@ -4,6 +4,31 @@ const slider = document.querySelector('#range');
 const clear = document.querySelector('#clear');
 const black = document.querySelector('#black');
 const rainbow = document.querySelector('#rainbow')
+const output = document.querySelector('#output');
+const picker = document.querySelector('#picker');
+
+const radios = document.querySelectorAll('input[name="mode"]')
+
+for (const radio of radios) {
+    radio.addEventListener('change', () => { 
+        let currentMode;
+        if (radio.checked) {
+            currentMode = radio.value;
+        }
+        if (currentMode === 'rainbow') {
+            rainbowMode();
+        } else if (currentMode === 'pick') {
+           pickerMode(); 
+        } else {
+            blackMode();
+        }
+        output.textContent = `The current mode is ${currentMode}`;
+})
+}
+
+
+
+
 
 const random = () => {
     let r = Math.floor(Math.random() * 255);
@@ -29,6 +54,17 @@ const random = () => {
         })
     })
  }
+
+ const pickerMode = () => {
+    let cells = document.querySelectorAll('.cell');
+    cells.forEach((cell) => {
+        cell.addEventListener('mouseover', () => {
+            cell.style.backgroundColor = picker.value;
+        })
+    })
+ }
+
+ picker.addEventListener('change', pickerMode);
 
 const gridMaker = () => {
     let num = slider.value;
@@ -61,26 +97,22 @@ clear.addEventListener('click', () => {
     blackMode();
 })
 
-black.addEventListener('click', () => {
-    erase();
-    gridMaker();
-    blackMode();
+// black.addEventListener('click', () => {
+//     erase();
+//     gridMaker();
+//     blackMode();
   
-})
+// })
 
-rainbow.addEventListener('click', () => {
-    erase();
-    gridMaker();
-    rainbowMode();
-})
-
-
-
-
+// rainbow.addEventListener('click', () => {
+//     erase();
+//     gridMaker();
+//     rainbowMode();
+// })
 
 gridMaker();
 blackMode();
-console.log(random());
+
 
 
 
