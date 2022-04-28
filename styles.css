@@ -1,11 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Indie Flower', cursive;
+    color: white;
+}
+
+h1 {
+    font-size: 60px;
+}
 
 .main-container {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(90deg, #00F260, #0575E6);
+    background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,17 +32,25 @@
 .grid-container {
     /* resize: both; */
     width: 600px;
-    height: 600px;
-    background-color: blueviolet;
+    height: 600px;   
     display: grid;
-  
+    border: 40px solid red;
+    border-radius: 25px;     
 }
 
 .cell {
-    border: 1px solid white;
-    background-color: aquamarine;
+    background-color: white;
 }
 
-.hover {
-    background-color: gold;
+.options {
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid red;
+    border-radius: 10px;
+    padding: 10px;
+
 }
+

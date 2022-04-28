@@ -9,11 +9,14 @@
 </head>
 <body>
 <div class="main-container">
-    <div class="buttons">
-    <button type="button" id="clear">CLEAR</button>
-    <!-- <button type="button" id="black">BLACK</button>
-    <button type="button" id="rainbow">RAINBOW</button> -->
-    </div>
+<h1 class="title">SKETCHY TIME</h1>
+<div class="grid-container"></div>
+<div class="slider-container">
+    <label for="range">Grid size</label>
+    <input type="range" min="16" max="100" value="16" class="slider" id="range" />        
+</div>
+  <div class="options">
+   
     <div>
         <input type="radio" name="mode" value="black" id="black" checked />
         <label for="black">Black</label>
@@ -26,13 +29,14 @@
         <input type="radio" name="mode" value="pick" id="pick" />
         <input type="color" value="#ff0000" id="picker" />
     </div>
-    <p id="output"></p>
+
  
-    <div class="slider-container">
-        <input type="range" min="16" max="100" value="16" class="slider" id="range" />        
-    </div>
-  
-    <div class="grid-container"></div>
+   
+    <div class="buttons">
+        <button type="button" id="clear">CLEAR</button>
+      </div>
+  </div> 
+   
 </div>
     <script src="./app.js"></script>
 </body>

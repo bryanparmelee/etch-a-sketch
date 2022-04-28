@@ -4,7 +4,6 @@ const slider = document.querySelector('#range');
 const clear = document.querySelector('#clear');
 const black = document.querySelector('#black');
 const rainbow = document.querySelector('#rainbow')
-const output = document.querySelector('#output');
 const picker = document.querySelector('#picker');
 
 const radios = document.querySelectorAll('input[name="mode"]')
@@ -37,9 +36,8 @@ for (const radio of radios) {
             rainbowMode();
         } else if (currentMode === 'pick') {
            pickerMode(); 
-        }
-        output.textContent = `The current mode is ${currentMode}`;
-})
+        }   
+    })
 }
 
 
